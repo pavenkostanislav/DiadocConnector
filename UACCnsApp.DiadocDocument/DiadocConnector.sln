@@ -3,7 +3,7 @@ Microsoft Visual Studio Solution File, Format Version 12.00
 # Visual Studio 14
 VisualStudioVersion = 14.0.25420.1
 MinimumVisualStudioVersion = 10.0.40219.1
-Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UACCnsApp.DiadocDocument", "..\UACCnsApp.DiadocDocument\UACCnsApp.DiadocDocument.csproj", "{8C43BC37-9074-4B61-B934-383C493C79E5}"
+Project("{FAE04EC0-301F-11D3-BF4B-00C04F79EFBC}") = "UACCnsApp.DiadocDocument", "UACCnsApp.DiadocDocument.csproj", "{8C43BC37-9074-4B61-B934-383C493C79E5}"
 EndProject
 Global
 	GlobalSection(SolutionConfigurationPlatforms) = preSolution
