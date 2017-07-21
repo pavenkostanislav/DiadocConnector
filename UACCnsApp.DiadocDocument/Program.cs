@@ -28,45 +28,14 @@ namespace UACCnsApp.DiadocDocument
                 var organizationWidget = new Widgets.OrganizationWidget();
                 var boxEventWidget = new Widgets.BoxEventWidget();
                 var documentWidget = new Widgets.DocumentWidget();
+                var zipArhiveDiadocModelWidgetWidget = new Widgets.ZipArhiveDiadocModelWidget();
 
                 aggregator.BoxesChecked += new Aggregators.BoxesCheckedEventHandler(organizationWidget.Update);
                 aggregator.BoxesChecked += new Aggregators.BoxesCheckedEventHandler(boxEventWidget.Update);
                 aggregator.BoxesChecked += new Aggregators.BoxesCheckedEventHandler(documentWidget.Update);
+                aggregator.BoxesChecked += new Aggregators.BoxesCheckedEventHandler(zipArhiveDiadocModelWidgetWidget.Update);
 
                 aggregator.Start();
-
-                #region OLD load
-                //using (var db = new Cis())
-                //{
-                //    db.LoadBoxes();
-
-                //    var ownerBox = db.GetDiadocBoxId(Constant.OwnerId);
-                //    var authTokenLogin = db.DiadocApi.Authenticate(DiadocConstants.DiadocLogin, DiadocConstants.DiadocPassword);
-
-                //    var filter = "Any." + Diadoc.Api.Com.DocumentDirection.Inbound;
-                //    db.LoadDocuments(filter, authTokenLogin, ownerBox);
-                //    db.LoadBoxEvents(filter, authTokenLogin, ownerBox);
-
-                //    filter = "Any." + Diadoc.Api.Com.DocumentDirection.Outbound;
-                //    db.LoadDocuments(filter, authTokenLogin, ownerBox);
-                //    db.LoadBoxEvents(filter, authTokenLogin, ownerBox);
-
-                //    var dt = DateTime.Now.AddHours(-60);
-                //    var listDoc = db.Documents.Where(
-                //                        m =>
-                //                            (m.LastUpdatedDate >= dt || m.CreationTimestamp >= dt
-                //                                ||
-                //                                db.BoxEvents.Any(
-                //                                    be =>
-                //                                        be.MessageId == m.MessageId &&
-                //                                        (be.LastUpdatedDate >= dt || be.Timestamp >= dt))
-                //                            ) &&
-                //                            m.DocCardId > 0 &&
-                //                            m.Active)
-                //                    .ToList();
-                //    db.LoadZip(listDoc, authTokenLogin, ownerBox);
-                //}
-                #endregion
 
 #if DEBUG
                 Console.ReadKey();
